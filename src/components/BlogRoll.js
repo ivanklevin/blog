@@ -10,7 +10,7 @@ class BlogRoll extends React.Component {
 
     return (
       <div className="list">
-        {posts && posts.map(({ node: post }) => <PostShortCard post={post} key={post.id} />)}
+        {posts && posts.length > 0 && posts.map(({ node: post }) => <PostShortCard post={post} key={post.id} />)}
       </div>
     );
   }
