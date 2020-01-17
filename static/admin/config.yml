@@ -12,11 +12,11 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "posts"
+  - name: "aticles"
     label: "Статьи"
-    folder: "src/pages/posts"
+    folder: "src/pages/aticles"
     create: true
-    slug: "{{slug}}"
+    slug: "{{category}}/{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
