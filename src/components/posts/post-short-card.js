@@ -32,7 +32,7 @@ const Info = styled.div`
 const PostShortCard = ({ post }) => (
   <Post className={post.frontmatter.featuredpost ? "is-featured" : ""}>
     <Title>{post.frontmatter.title}</Title>
-    <Description>{post.excerpt}</Description>
+    <Description>{post.frontmatter.description}</Description>
     <Image>
       <PreviewCompatibleImage
         imageInfo={{

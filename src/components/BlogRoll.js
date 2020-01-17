@@ -10,7 +10,11 @@ class BlogRoll extends React.Component {
 
     return (
       <div className="list">
-        {posts && posts.length > 0 && posts.map(({ node: post }) => <PostShortCard post={post} key={post.id} />)}
+        {posts &&
+          posts.length > 0 &&
+          posts.map(({ node: post }) => (
+            <PostShortCard post={post} key={post.id} />
+          ))}
       </div>
     );
   }
@@ -29,12 +33,11 @@ export default () => (
     query={graphql`
       query BlogRollQuery {
         allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+          sort: { order: ASC, fields: [frontmatter___date] }
+          filter: { }
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
               id
               fields {
                 slug
@@ -44,6 +47,8 @@ export default () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
+                description
+                category
                 featuredimage {
                   childImageSharp {
                     fluid(maxWidth: 720, maxHeight: 320, quality: 100) {
