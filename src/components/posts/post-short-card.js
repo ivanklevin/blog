@@ -33,14 +33,16 @@ const PostShortCard = ({ post }) => (
   <Post className={post.frontmatter.featuredpost ? "is-featured" : ""}>
     <Title>{post.frontmatter.title}</Title>
     <Description>{post.frontmatter.description}</Description>
-    <Image>
-      <PreviewCompatibleImage
-        imageInfo={{
-          image: post.frontmatter.featuredimage,
-          alt: `картинка ${post.frontmatter.title}`
-        }}
-      />
-    </Image>
+    {post.frontmatter.featuredimage != null ? (
+      <Image>
+        <PreviewCompatibleImage
+          imageInfo={{
+            image: post.frontmatter.featuredimage,
+            alt: `картинка ${post.frontmatter.title}`
+          }}
+        />
+      </Image>
+    ) : null}
     <Info>
       <Link className="button" to={post.fields.slug}>
         Читать

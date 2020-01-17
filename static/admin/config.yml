@@ -16,7 +16,6 @@ collections:
     label: "Статьи"
     folder: "src/pages/articles"
     create: true
-    content: "article"
     slug: "{{category}}/{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
