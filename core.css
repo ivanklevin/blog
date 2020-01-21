@@ -1,12 +1,27 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  height: 100%;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.js-global-container {
+  height: 100%;
+}
+
+#gatsby-focus-wrapper {
+  height: 100%;
 }
 
 body,
